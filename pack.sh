@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=0.4.100
+VERSION=0.4.143
 
 rm -rf artifacts
 mkdir artifacts
@@ -42,9 +42,7 @@ echo "// Build Arduino library"
 echo ""
 
 mkdir artifacts/Arduino
-cp IL2C.Runtime/include/*.h artifacts/Arduino/src/
-cp IL2C.Runtime/src/*.h artifacts/Arduino/src/
-#cp IL2C.Runtime/src/*.c artifacts/Arduino/src/
+cp -r IL2C.Runtime/src IL2C.Runtime/include artifacts/Arduino
 
 sed "s/{version}/${VERSION}/g" Arduino.properties > artifacts/Arduino/library.properties
 
