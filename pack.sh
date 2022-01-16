@@ -26,7 +26,8 @@ echo "///////////////////////////////////////////////"
 echo "// Build IL2C.Runtime"
 echo ""
 
-dotnet pack -Prop version=${VERSION} -OutputDirectory artifacts IL2C.Runtime/IL2C.Runtime.nuspec
+# Get latest nuget.exe from here: https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+mono ./.nuget/nuget.exe -Prop version=${VERSION} -OutputDirectory artifacts IL2C.Runtime/IL2C.Runtime.nuspec
 
 echo ""
 echo "///////////////////////////////////////////////"
