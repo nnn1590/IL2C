@@ -26,7 +26,7 @@ echo "///////////////////////////////////////////////"
 echo "// Build IL2C.Runtime"
 echo ""
 
-.nuget/nuget pack -Prop version=${VERSION} -OutputDirectory artifacts IL2C.Runtime/IL2C.Runtime.nuspec 
+dotnet pack -Prop version=${VERSION} -OutputDirectory artifacts IL2C.Runtime/IL2C.Runtime.nuspec
 
 echo ""
 echo "///////////////////////////////////////////////"
@@ -42,11 +42,11 @@ echo "// Build Arduino library"
 echo ""
 
 mkdir artifacts/Arduino
-cp /R IL2C.Runtime/include/*.h artifacts/Arduino/src/
-cp /R IL2C.Runtime/src/*.h artifacts/Arduino/src/
-cp /R IL2C.Runtime/src/*.c artifacts/Arduino/src/
+cp IL2C.Runtime/include/*.h artifacts/Arduino/src/
+cp IL2C.Runtime/src/*.h artifacts/Arduino/src/
+#cp IL2C.Runtime/src/*.c artifacts/Arduino/src/
 
-sed 's/{version}/${VERSION}/g' Arduino.properties > artifacts/Arduino/library.properties
+sed "s/{version}/${VERSION}/g" Arduino.properties > artifacts/Arduino/library.properties
 
 echo ""
 echo "Done."
