@@ -5,17 +5,19 @@ on:
     - master
     - devel
     - feature/github-actions-2
+    - nnn1590-devel
   pull_request:
     branches:
     - master
     - devel
+    - nnn1590-devel
   workflow_dispatch:
     branches:
 permissions:
   contents: read
 jobs:
   build-linux:
-    runs-on: [self-hosted, linux, x64]
+    runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
@@ -39,7 +41,7 @@ jobs:
       with:
         dotnet-version: 5.0.402
     - name: Initialize tools
-      run: bash ./init-tools.sh
+      run: sudo bash ./init-tools.sh
     - name: Install dependencies
       run: |
         dotnet restore il2c.sln
