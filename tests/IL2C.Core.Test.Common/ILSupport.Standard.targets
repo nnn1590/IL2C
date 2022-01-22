@@ -15,7 +15,7 @@
    
         <!-- It's RC version, but latest stable 5.0.0 cause unknown bug (0xc0000004) occurred -->
         <MicrosoftNETCoreToolingVersion Condition="'$(MicrosoftNETCoreToolingVersion)' == ''">6.0.0-rc.2.21480.5</MicrosoftNETCoreToolingVersion>
-        <ILVerifyPackageVersion Condition="'$(ILVerifyPackageVersion)' == ''">6.0.0</ILVerifyPackageVersion>
+        <ILVerifyPackageVersion Condition="'$(ILVerifyPackageVersion)' == ''">5.0.0</ILVerifyPackageVersion>
 
         <MicrosoftNetCoreIlasmPackageName>runtime.$(MicrosoftNetCoreIlasmPackageRuntimeId).microsoft.netcore.ilasm</MicrosoftNetCoreIlasmPackageName>
         <MicrosoftNetCoreIldasmPackageName>runtime.$(MicrosoftNetCoreIlasmPackageRuntimeId).microsoft.netcore.ildasm</MicrosoftNetCoreIldasmPackageName>
